@@ -11,3 +11,11 @@ with open(sys.argv[1], "r") as file: #Get file from the arguments
             word = re.sub(r'[^\w\s]', '', word) #Getting rid off all punctuatins
             words.append(word.lower())
     file.close()
+
+words.sort();   #Sort the words in the word list
+#store the words in the list into a dictionary to get rid off duplicates
+for word in words:
+    words_dictionary[word] = words.count(word)  #Store each word with their respective word count
+#
+for word in words_dictionary:
+    print(word, words_dictionary[word])
