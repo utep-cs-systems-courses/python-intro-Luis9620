@@ -17,5 +17,11 @@ words.sort();   #Sort the words in the word list
 for word in words:
     words_dictionary[word] = words.count(word)  #Store each word with their respective word count
 #
+#Print word in console
 for word in words_dictionary:
     print(word, words_dictionary[word])
+
+#Print the word dictionary in a file
+with open(sys.argv[2], "w") as file:
+	for word in words_dictionary:
+		print(word, words_dictionary[word], file=file)
